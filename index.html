@@ -1,0 +1,52 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Neymar - Na Verdatchii</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: fill;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="assets/imagem.jpeg" alt="Imagem em tela cheia">
+    <audio id="meuAudio" src="assets/audio.mp3" autoplay></audio>
+    <script>
+        const audio = document.getElementById('meuAudio');
+
+        // Quando o áudio terminar, fecha a aplicação
+        audio.addEventListener('ended', function () {
+            // Usa a API do Electron para fechar a janela
+            if (window.electronAPI) {
+                window.electronAPI.closeApp();
+            } else {
+                // Fallback: tenta fechar via window.close()
+                window.close();
+            }
+        });
+    </script>
+</body>
+
+</html>

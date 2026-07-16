@@ -1,0 +1,27 @@
+{
+  "name": "seu-app",
+  "version": "1.0.0",
+  "description": "Um app de tela cheia com imagem e audio",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "author": "Davi Desenvolvedor Rubro Negro",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.seuapp.id",
+    "productName": "MeuAppTelaCheia",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icone.ico"
+    }
+  }
+}
